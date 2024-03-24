@@ -1,0 +1,54 @@
+<section>
+  <div *ngIf="showLoginForm">
+    <div class="log-in-container">
+      <img src="assets/images/Login_image.png" alt="" />
+      <div class="log-in-form-container">
+        <img src="assets/images/Dummy_Logo.png" alt="" />
+        <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+          <label for="emailAdress">Email Id : </label>
+          <input
+            id="emailAdress"
+            type="email"
+            formControlName="email"
+            placeholder="info@provistechnologies.com"
+          />
+          <div *ngIf="email?.invalid && email?.touched" class="errors">
+            <p *ngIf="email?.errors?.['required']">Email is required</p>
+            <p *ngIf="email?.errors?.['email']">Email doesnt match pattern</p>
+          </div>
+          <label for="passwords">Password : </label>
+          <input
+            id="passwords"
+            type="password"
+            formControlName="password"
+            placeholder="Enter your password"
+          />
+          <div *ngIf="password?.invalid && password?.touched" class="errors">
+            <p *ngIf="password?.errors?.['required']">Email is required</p>
+            <p *ngIf="password?.errors?.['pattern']">
+              Email doesnt match pattern
+            </p>
+          </div>
+          <div>
+            <a
+              href="
+"
+              >Forgot password?</a
+            >
+            <button type="submit" [disabled]="!loginForm.valid">
+              Login now
+            </button>
+          </div>
+        </form>
+        <p>OR</p>
+        <button (click)="toggleSection()">Signup now</button>
+      </div>
+    </div>
+  </div>
+  <div *ngIf="!showLoginForm">
+    <!-- Show signup section if showLoginForm is false -->
+    <app-sign-up></app-sign-up>
+    <!-- Assuming you have a SignUpComponent -->
+    <button (click)="toggleSection()">Back to Login</button>
+  </div>
+</section>
