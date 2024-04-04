@@ -23,7 +23,7 @@
             placeholder="Invictus Innocent"
             formControlName="fullName"
           />
-          <i class="fa-solid fa-check"></i>
+          <i class="fa-solid fa-circle-check"></i>
           <div
             class="errors"
             *ngIf="
@@ -50,7 +50,7 @@
           placeholder="Enter email address"
           formControlName="email"
         />
-        <i class="fa-solid fa-check"></i>
+        <i class="fa-solid fa-circle-check"></i>
         <div
           *ngIf="
             (email?.invalid && email?.touched) || email?.dirty || submitted
@@ -71,8 +71,7 @@
           placeholder="Enter email address"
           formControlName="password"
         />
-        <i class="fa-solid fa-check"></i>
-
+        <i class="fa-solid fa-circle-check"></i>
         <div
           *ngIf="
             (password?.invalid && password?.touched) ||

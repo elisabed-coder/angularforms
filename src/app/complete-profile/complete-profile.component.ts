@@ -30,6 +30,17 @@ export class CompleteProfileComponent implements OnInit {
       country: [''],
     });
   }
+  get phone() {
+    return this.completeForm.get('phone');
+  }
+
+  get address() {
+    return this.completeForm.get('address');
+  }
+
+  get country() {
+    return this.completeForm.get('country');
+  }
   onFormSubmit() {
     console.log(this.completeForm.value);
   }

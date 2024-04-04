@@ -7,6 +7,7 @@ import { JoinUsComponent } from './join-us/join-us.component';
 import { IndividualAccountComponent } from './individual-account/individual-account.component';
 import { VerificationComponent } from './complete-profile/verification/verification.component';
 import { CompleteProfileComponent } from './complete-profile/complete-profile.component';
+import { AccountVerificationComponent } from './account-verification/account-verification.component';
 
 const routes: Routes = [
   // {
@@ -33,6 +34,10 @@ const routes: Routes = [
         component: VerificationComponent,
       },
     ],
+  },
+  {
+    path: 'accountverification',
+    component: AccountVerificationComponent,
   },
   { path: '**', component: PageNotFoundComponent },
 ];

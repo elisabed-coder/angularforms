@@ -15,6 +15,7 @@ import { VerificationComponent } from './complete-profile/verification/verificat
 import { RouterModule } from '@angular/router';
 import { NgSelectModule } from '@ng-select/ng-select';
 import { MaterialAngularSelectModule } from 'material-angular-select';
+import { AccountVerificationComponent } from './account-verification/account-verification.component';
 
 @NgModule({
   declarations: [
@@ -27,6 +28,7 @@ import { MaterialAngularSelectModule } from 'material-angular-select';
     IndividualAccountComponent,
     CompleteProfileComponent,
     VerificationComponent,
+    AccountVerificationComponent,
   ],
   imports: [
     BrowserModule,

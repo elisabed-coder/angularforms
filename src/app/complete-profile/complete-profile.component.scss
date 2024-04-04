@@ -77,3 +77,20 @@ form {
   font-size: 12px;
   font-weight: 400;
 }
+.input-cont {
+  position: relative;
+  display: flex;
+}
+
+.input-cont i {
+  position: absolute;
+  font-size: 16px;
+  right: 10%;
+  top: 50%;
+  display: none;
+}
+
+.input-cont.valid i {
+  display: inline-block;
+  color: green;
+}
