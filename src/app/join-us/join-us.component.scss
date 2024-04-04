@@ -1,0 +1,100 @@
+section {
+  height: 100vh;
+  display: flex;
+}
+
+section > img {
+  height: 100%;
+  width: 46.25%;
+  object-fit: cover;
+}
+.right-side-contianer {
+  padding: 70px 81px 0 127px;
+}
+.sign-in-container {
+  display: flex;
+  align-items: center;
+  justify-content: right;
+  gap: 2px;
+}
+.sign-in-container p {
+  font-weight: 400;
+  font-size: 18px;
+  color: rgba(134, 146, 166, 1);
+}
+.sign-in-container button {
+  font-size: 18px;
+  font-weight: 500;
+  color: rgba(21, 101, 216, 1);
+  border: none;
+  background-color: transparent;
+}
+.join-us-container {
+  margin-top: 135px;
+  h1 {
+    font-weight: 700;
+    font-size: 30px;
+  }
+  p {
+    font-weight: 400;
+    font-size: 18px;
+    color: rgba(134, 146, 166, 1);
+    margin-top: 10px;
+  }
+}
+.individual,
+.business {
+  display: flex;
+  align-items: center;
+  padding: 28px;
+  box-shadow: 0px 2px 14px 1px rgba(0, 0, 0, 0.06);
+  gap: 28px;
+  cursor: pointer;
+  transition: all 0.4s ease;
+}
+.individual {
+  margin-top: 35px;
+}
+.pentagon-container,
+.pentagon-container-white {
+  width: 52px; /* Width of the pentagon */
+  height: 52px; /* Height of the pentagon */
+  background-repeat: no-repeat;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+}
+
+.pentagon-container {
+  background-image: url("/assets/images/Polygon 1.png");
+}
+.pentagon-container-white {
+  background-image: url("/assets/images/Polygon 2.png");
+}
+.user-icon {
+  width: 20px;
+  height: 20px;
+  color: #ffff;
+}
+
+.business {
+  margin-top: 28px;
+}
+
+.arrow-icon {
+  display: none;
+}
+
+.business:hover,
+.individual:hover {
+  border: 1px solid rgba(21, 101, 216, 1);
+  box-shadow: 0px 4px 14px 1px rgba(0, 0, 0, 0.04);
+  background-color: rgba(245, 249, 255, 1);
+}
+
+.individual:hover .arrow-icon,
+.business:hover .arrow-icon {
+  display: inline-flex;
+}

@@ -14,8 +14,8 @@ import { passwordConfirmation } from '../validators/password-confirmation.valida
 })
 export class SignUpComponent implements OnInit {
   signUpForm: FormGroup;
-  constructor(private sf: FormBuilder) {
-    this.signUpForm = this.sf.group(
+  constructor(private fb: FormBuilder) {
+    this.signUpForm = this.fb.group(
       {
         firstName: [
           '',
@@ -45,7 +45,7 @@ export class SignUpComponent implements OnInit {
             ),
           ],
         ],
-        confirmPassword: [''],
+        confirmPassword: ['', Validators.required],
         companyName: ['', Validators.required],
       },
       {
@@ -76,5 +76,9 @@ export class SignUpComponent implements OnInit {
   }
   get mobile() {
     return this.signUpForm.get('mobile');
+  }
+
+  get confirmPassword() {
+    return this.signUpForm.get('confirmPassword');
   }
 }

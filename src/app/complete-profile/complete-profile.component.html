@@ -1,0 +1,48 @@
+<section>
+  <img src="assets/images/Frame 1.png" alt="" />
+  <div class="right-container">
+    <div class="going-back-box">
+      <button routerLink="/individual">
+        <i class="fa-solid fa-angle-left" routerLink="/individual"></i>Back
+      </button>
+      <div>
+        <p>STEP 02/03</p>
+        <h6>Residency Info.</h6>
+      </div>
+    </div>
+
+    <form [formGroup]="completeForm" (ngSubmit)="onFormSubmit()">
+      <h1>Complete Your Profile!</h1>
+      <p>For the purpose of industry regulation, your details are required.</p>
+      <div>
+        <label>Phone number</label>
+        <input type="text" placeholder="090912345567" formControlName="phone" />
+      </div>
+      <div>
+        <label>Address</label>
+        <input
+          type="text"
+          placeholder="Please enter address"
+          formControlName="address"
+        />
+      </div>
+      <div class="country-option">
+        <label>Country of residence</label>
+        <select formControlName="country">
+          <option value="" class="country-placeholder">Please select</option>
+          <option value="Georgia">Georgia</option>
+          <option value="Italy">Italy</option>
+          <option value="France">France</option>
+        </select>
+      </div>
+      <button type="submit" class="register-btn" routerLink="verification">
+        Save & Continue
+      </button>
+      <div class="secured-safety">
+        <img src="/assets/images/lock_24px.svg" alt="" />
+        <p>Your Info is safely secured</p>
+      </div>
+    </form>
+  </div>
+</section>
+<router-outlet></router-outlet>

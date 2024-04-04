@@ -1,0 +1,114 @@
+<section>
+  <img src="assets/images/Frame 1.png" alt="" />
+  <div class="right-container">
+    <div class="going-back-box">
+      <button routerLink="/"><i class="fa-solid fa-angle-left"></i>Back</button>
+      <div>
+        <p>STEP 01/03</p>
+        <h6>Personal Info.</h6>
+      </div>
+    </div>
+
+    <form [formGroup]="individualForm" (ngSubmit)="onFormSubmit()">
+      <h1>Register Individual Account!</h1>
+      <p>For the purpose of industry regulation, your details are required.</p>
+      <div
+        class="input-cont"
+        [class.valid]="fullName?.valid && fullName?.dirty"
+      >
+        <label>Your fullname*</label>
+        <div>
+          <input
+            type="text"
+            placeholder="Invictus Innocent"
+            formControlName="fullName"
+          />
+          <i class="fa-solid fa-check"></i>
+          <div
+            class="errors"
+            *ngIf="
+              (fullName?.invalid && fullName?.touched) ||
+              fullName?.dirty ||
+              submitted
+            "
+          >
+            <p *ngIf="fullName?.errors?.['required']">Name is required</p>
+            <p *ngIf="fullName?.errors?.['minlength']">
+              Name minlength should be at least 5 letter
+            </p>
+            <p *ngIf="fullName?.errors?.['maxlength']">
+              Name length should be less than 17 letter
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="input-cont" [class.valid]="email?.valid && email?.dirty">
+        <label>Email address*</label>
+        <input
+          type="email"
+          placeholder="Enter email address"
+          formControlName="email"
+        />
+        <i class="fa-solid fa-check"></i>
+        <div
+          *ngIf="
+            (email?.invalid && email?.touched) || email?.dirty || submitted
+          "
+          class="errors"
+        >
+          <p *ngIf="email?.errors?.['required']">Email is required</p>
+          <p *ngIf="email?.errors?.['email']">Email format is not right</p>
+        </div>
+      </div>
+      <div
+        class="input-cont"
+        [class.valid]="password?.valid && password?.dirty"
+      >
+        <label>Create password*</label>
+        <input
+          type="password"
+          placeholder="Enter email address"
+          formControlName="password"
+        />
+        <i class="fa-solid fa-check"></i>
+
+        <div
+          *ngIf="
+            (password?.invalid && password?.touched) ||
+            password?.dirty ||
+            submitted
+          "
+          class="errors"
+        >
+          <p *ngIf="password?.errors?.['required']">Password is required</p>
+          <p *ngIf="password?.errors?.['minlength']">
+            Password should be at least 6 characters
+          </p>
+          <p *ngIf="password?.errors?.['pattern']">
+            Password should match pattern
+          </p>
+        </div>
+      </div>
+      <div class="container">
+        <label class="checkmark" for="check">
+          <input type="checkbox" name="check" formControlName="acceptTerms" />I
+          agree terms and conditions
+        </label>
+        <p class="errors" *ngIf="submitted && acceptTerms?.invalid">
+          Accept Ts & Cs is required
+        </p>
+      </div>
+      <button type="submit" class="register-btn">Register Account</button>
+
+      <hr class="hr-text gradient" data-content="OR" />
+    </form>
+    <button class="google-register">
+      <img
+        src="
+        /assets/images/flat-color-icons_google.svg"
+        alt=""
+      />Register with Google
+    </button>
+  </div>
+</section>

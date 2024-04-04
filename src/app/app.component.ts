@@ -11,13 +11,13 @@ export class AppComponent {
   title = 'forms';
   editor: EditorType = 'name';
 
-  get showNameEditor() {
-    return this.editor === 'name';
-  }
+  // get showNameEditor() {
+  //   return this.editor === 'name';
+  // }
 
-  get showProfileEditor() {
-    return this.editor === 'profile';
-  }
+  // get showProfileEditor() {
+  //   return this.editor === 'profile';
+  // }
 
   toggleEditor(type: EditorType) {
     this.editor = type;

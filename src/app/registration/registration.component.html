@@ -1,0 +1,37 @@
+<p>registration works!</p>
+
+<form [formGroup]="registerForm" (submit)="onFormSubmit()">
+  <div class="form-group">
+    <label for="">FirstName</label>
+    <input type="text" formControlName="firstName" />
+  </div>
+  <div class="form-group">
+    <label for="">lastname</label>
+    <input type="text" formControlName="lastname" />
+  </div>
+  <div class="form-group">
+    <label for="">Email:</label>
+    <input type="email" formControlName="email" />
+  </div>
+  <div class="form-group">
+    <label for="">password</label>
+    <input type="text" formControlName="password" />
+  </div>
+  <div class="form-group">
+    <label for=""> confirm password</label>
+    <input type="text" formControlName="confirmPassword" />
+  </div>
+  <div class="form-group">
+    <label for=""> Company name</label>
+    <input type="text" formControlName="companyNames" />
+  </div>
+  <div class="form-group">
+    <button
+      type="submit"
+      (click)="onFormSubmit()"
+      [disabled]="!registerForm.valid"
+    >
+      sign Up
+    </button>
+  </div>
+</form>
