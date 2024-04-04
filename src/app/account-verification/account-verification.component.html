@@ -3,21 +3,25 @@
   <div class="right-container">
     <div class="going-back-box">
       <button routerLink="/individual">
-        <i class="fa-solid fa-angle-left" routerLink="/complete"></i>Bank
+        <i class="fa-solid fa-angle-left" routerLink="/complete"></i>Back
         Verification
       </button>
       <div>
         <p>STEP 03/03</p>
-        <h6>Residency Info.</h6>
+        <h6>Bank verification</h6>
       </div>
     </div>
 
-    <form action="">
+    <form [formGroup]="bankVerification" (ngSubmit)="onFormSubmit()">
       <h1>Complete Your Profile!</h1>
       <p>For the purpose of industry regulation, your details are required.</p>
       <div>
         <label>Bank verification number (BVN)</label>
-        <input type="text" placeholder="090912345567" />
+        <input
+          type="text"
+          placeholder="090912345567"
+          formControlName="bankNumber"
+        />
         <i class="fa-solid fa-circle-check"></i>
       </div>
       <button type="submit" class="register-btn">Save & Continue</button>

@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup } from '@angular/forms';
-import { ActivatedRoute } from '@angular/router';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-complete-profile',
@@ -11,29 +11,31 @@ export class CompleteProfileComponent implements OnInit {
   completeForm!: FormGroup;
   formData: any;
 
-  constructor(private route: ActivatedRoute, private fb: FormBuilder) {}
+  constructor(
+    private route: ActivatedRoute,
+    private router: Router,
+    private fb: FormBuilder
+  ) {}
 
   ngOnInit(): void {
     const formDataParam = this.route.snapshot.queryParamMap.get('formData');
     if (formDataParam) {
       try {
         this.formData = JSON.parse(formDataParam);
-        console.log(this.formData);
       } catch (error) {
         console.error('Error parsing formData JSON:', error);
       }
     }
-    // Define the form group here
     this.completeForm = this.fb.group({
-      phone: [''],
+      phone: ['', Validators.required],
       address: [''],
-      country: [''],
+      country: ['', Validators.required],
     });
   }
+
   get phone() {
     return this.completeForm.get('phone');
   }
-
   get address() {
     return this.completeForm.get('address');
   }
@@ -42,6 +44,17 @@ export class CompleteProfileComponent implements OnInit {
     return this.completeForm.get('country');
   }
   onFormSubmit() {
-    console.log(this.completeForm.value);
+    if (this.completeForm.valid) {
+      const mergedFormData = {
+        ...this.formData,
+        phone: this.completeForm.get('phone')?.value,
+        address: this.completeForm.get('address')?.value,
+        country: this.completeForm.get('country')?.value,
+      };
+
+      this.router.navigate(['/accountverification'], {
+        queryParams: { mergedFormData: JSON.stringify(mergedFormData) },
+      });
+    }
   }
 }
