@@ -1,0 +1,31 @@
+.form-container {
+  display: flex;
+}
+.inputbla {
+  width: 400px;
+}
+.input-group {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+  width: 400px;
+}
+
+.input-group .label {
+  margin-right: 10px;
+}
+
+.input-group .ng-select {
+  flex-grow: 1;
+}
+
+.input-group textarea {
+  flex-grow: 1;
+  margin-right: 10px;
+  border: none;
+}
+
+.flag-img {
+  width: 20px;
+  height: 20px;
+}

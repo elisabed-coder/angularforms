@@ -17,6 +17,7 @@ import { NgSelectModule } from '@ng-select/ng-select';
 import { MaterialAngularSelectModule } from 'material-angular-select';
 import { AccountVerificationComponent } from './account-verification/account-verification.component';
 import { LastStageComponent } from './last-stage/last-stage.component';
+import { AutocompleteDemoComponent } from './components/autocomplete-demo/autocomplete-demo.component';
 
 @NgModule({
   declarations: [
@@ -31,6 +32,7 @@ import { LastStageComponent } from './last-stage/last-stage.component';
     VerificationComponent,
     AccountVerificationComponent,
     LastStageComponent,
+    AutocompleteDemoComponent,
   ],
   imports: [
     BrowserModule,

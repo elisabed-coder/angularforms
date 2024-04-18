@@ -14,11 +14,11 @@
     <form [formGroup]="completeForm" (ngSubmit)="onFormSubmit()">
       <h1>Complete Your Profile!</h1>
       <p>For the purpose of industry regulation, your details are required.</p>
-      <div class="input-cont" [class.valid]="phone?.valid && phone?.dirty">
+      <!-- <div class="input-cont" [class.valid]="phone?.valid && phone?.dirty">
         <label>Phone number</label>
         <input type="text" placeholder="090912345567" formControlName="phone" />
         <i class="fa-solid fa-circle-check"></i>
-      </div>
+      </div> -->
       <div class="input-cont" [class.valid]="address?.valid && address?.dirty">
         <label>Address</label>
         <input

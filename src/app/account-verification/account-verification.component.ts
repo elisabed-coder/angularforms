@@ -31,6 +31,7 @@ export class AccountVerificationComponent implements OnInit {
       bankNumber: ['', Validators.required],
     });
   }
+
   get bankNumber() {
     return this.bankVerification.get('bankNumber');
   }
@@ -41,7 +42,8 @@ export class AccountVerificationComponent implements OnInit {
         ...this.mergedFormData,
         bankNumber: this.bankVerification.get('bankNumber')?.value,
       };
-      this.router.navigate(['/lastStage'], {
+      console.log('Whole Merget Data:', wholeMergetData);
+      this.router.navigate(['/'], {
         queryParams: { wholeMergetData: JSON.stringify(wholeMergetData) },
       });
     }

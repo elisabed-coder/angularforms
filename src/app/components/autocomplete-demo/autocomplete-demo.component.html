@@ -1,0 +1,45 @@
+<!-- <div class="auto-container">
+  <span class="heading">ng-select autocomplete-demo</span>
+  <form [formGroup]="frm" (ngSubmit)="onPost()">
+    <label class="label">Countries</label>
+    <ng-select
+      class="w-20"
+      formControlName="selectedCountry"
+      [clearable]="false"
+    >
+      <ng-option *ngFor="let country of countries" [value]="country.id">
+        <img [src]="country.imageUrl" width="20" height="20" />
+        {{ country.name }} - {{ country.id }}
+      </ng-option>
+    </ng-select>
+    <button type="submit" class="btn">Save</button>
+    <textarea
+      class="input"
+      formControlName="description"
+      placeholder="Enter the phone number"
+    ></textarea>
+  </form>
+</div> -->
+
+<div class="auto-container">
+  <span class="heading">ng-select autocomplete-demo</span>
+  <form [formGroup]="frm" (ngSubmit)="onPost()" class="form-container">
+    <div class="input-group">
+      <label class="label">phonenunm</label>
+      <ng-select class="w-20" formControlName="selectedCountry">
+        <ng-option *ngFor="let country of countries" [value]="country.id">
+          <img [src]="country.imageUrl" class="flag-img" />
+          {{ country.name }}
+        </ng-option>
+      </ng-select>
+      <textarea
+        class="input"
+        formControlName="description"
+        placeholder="Enter the phone number"
+      ></textarea>
+    </div>
+    <div class="input-group">
+      <button type="submit" class="btn">Save</button>
+    </div>
+  </form>
+</div>
